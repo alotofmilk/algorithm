@@ -1,10 +1,9 @@
-import heapq
 import sys
-
-N = int(sys.stdin.readline()); numbers = []; result = []
-for i in range(N): numbers.append(int(sys.stdin.readline()))
+import heapq
+N = int(sys.stdin.readline()); abs_heap = []
 for i in range(N):
-    if numbers[i] == 0:
-        if len(result) == 0: print(0)
-        else: print(heapq.heappop(result)[1])
-    elif numbers[i] != 0: heapq.heappush(result, (abs(numbers[i]), numbers[i]))
+    number = int(sys.stdin.readline().strip())
+    if number != 0: heapq.heappush(abs_heap, (abs(number),number))
+    else:
+        if len(abs_heap) == 0: print(0)
+        else: print(heapq.heappop(abs_heap)[1])
