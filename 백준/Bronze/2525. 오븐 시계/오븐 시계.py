@@ -1,18 +1,15 @@
-a, b = input().split()
-cook = input()
+import sys
+A, B = map(int, sys.stdin.readline().split())
+C = int(sys.stdin.readline())
+tmp = 0
 
-A = int(a)
-B = int(b)
-cooking_time = int(cook)
-
-if B + cooking_time < 60:
-    print("{} {}".format(A, B + cooking_time))
-elif B + cooking_time >= 60:
-    if A + ((B + cooking_time) // 60) >= 24:
-        A = (A + ((B + cooking_time) // 60)) - 24
-        B = (B + cooking_time) % 60
+if B + C < 60:
+    print("{} {}".format(A, B+C))
+else:
+    tmp = B + C
+    A = A + (tmp // 60)
+    B = tmp % 60
+    if A >= 24:
+        A = A - 24
         print("{} {}".format(A, B))
-    elif A + ((B + cooking_time) // 60) < 24:
-        A = (A + ((B + cooking_time) // 60))
-        B = (B + cooking_time) % 60
-        print("{} {}".format(A, B))
+    else: print("{} {}".format(A, B))
