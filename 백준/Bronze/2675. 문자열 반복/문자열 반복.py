@@ -1,8 +1,8 @@
 import sys
-T = int(sys.stdin.readline()); new_sentence = ""; answer = []
-for i in range(T):
+T = int(sys.stdin.readline()); answer = []
+for i in range(0,T):
+    data = ""
     R, S = map(str,sys.stdin.readline().split())
-    for j in range(len(S)): new_sentence += int(R) * S[j]
-    answer.append(new_sentence)
-    new_sentence = ""
+    for j in range(0,len(S)): data = data + int(R) * S[j]
+    answer.append(data)
 print(*answer, sep="\n")
