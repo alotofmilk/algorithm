@@ -1,7 +1,7 @@
 import sys
-score = []
+result = []
 for i in range(5):
-    score.append(int(sys.stdin.readline()))
-    if score[i] < 40:
-        score[i] = 40
-print(sum(score) // 5)
+    score = int(sys.stdin.readline())
+    if score < 40: score = 40
+    result.append(score)
+print(sum(result) // 5)
