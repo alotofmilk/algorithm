@@ -1,7 +1,12 @@
 import sys
-a, b, c = map(int, sys.stdin.readline().split())
-if a == b and b == c: print(10000 + a * 1000)
-elif a == b and b != c: print(1000 + a * 100)
-elif b == c and c != a: print(1000 + b * 100)
-elif c == a and a != b: print(1000 + c * 100)
-elif a != b and b != c and c != a: print(100 * max(a,b,c))
+A, B, C = map(int,sys.stdin.readline().split())
+if A == B and B == C and C == A:
+    print(10000 + A * 1000)
+elif A == B and B != C:
+    print(1000 + A * 100)
+elif A != B and B == C:
+    print(1000 + B * 100)
+elif B != C and C == A:
+    print(1000 + C * 100)
+elif A != B and B != C and C != A:
+    print(max(A,B,C) * 100)
