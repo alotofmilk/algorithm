@@ -1,16 +1,27 @@
 import sys
-make_rectangle = [[],[]]; find_last_X = 0; find_last_Y = 0
-for i in range(3):
-    X, Y = map(int,sys.stdin.readline().split())
-    make_rectangle[0].append(X)
-    make_rectangle[1].append(Y)
+dot_list = []
+for i in range(0,3):
+    a, b = map(int,sys.stdin.readline().split())
+    dot_list.append([a,b])
 
-if make_rectangle[0].count(max(make_rectangle[0])) > make_rectangle[0].count(min(make_rectangle[0])):
-    find_last_X = min(make_rectangle[0])
-else: find_last_X = max(make_rectangle[0])
+x_list = [dot_list[0][0], dot_list[1][0], dot_list[2][0]]
+y_list = [dot_list[0][1], dot_list[1][1], dot_list[2][1]]
+answer_x = 0; answer_y = 0
 
-if make_rectangle[1].count(max(make_rectangle[1])) > make_rectangle[1].count(min(make_rectangle[1])):
-    find_last_Y = min(make_rectangle[1])
-else: find_last_Y = max(make_rectangle[1])
+if x_list.count(dot_list[0][0]) == 1:
+    answer_x = dot_list[0][0]
+else:
+    if x_list.count(dot_list[1][0]) == 1:
+        answer_x = dot_list[1][0]
+    else:
+        answer_x = dot_list[2][0]
 
-print("{} {}".format(find_last_X, find_last_Y))
+if y_list.count(dot_list[0][1]) == 1:
+    answer_y = dot_list[0][1]
+else:
+    if y_list.count(dot_list[1][1]) == 1:
+        answer_y = dot_list[1][1]
+    else:
+        answer_y = dot_list[2][1]
+
+print(answer_x, answer_y)
