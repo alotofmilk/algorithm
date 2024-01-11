@@ -1,8 +1,8 @@
 import sys
-N = int(sys.stdin.readline()); answer = []; zero = 0; one = 0;
+N = int(sys.stdin.readline()); cute = 0; notCute = 0
 for i in range(N):
-    answer.append(int(sys.stdin.readline()))
-    if answer[i] == 0: zero += 1
-    elif answer[i] == 1: one += 1
-if zero > one: print("Junhee is not cute!")
-elif one > zero: print("Junhee is cute!")
+    result = sys.stdin.readline().strip()
+    if result == "0": notCute += 1
+    else: cute += 1
+if cute > notCute : print("Junhee is cute!")
+else: print("Junhee is not cute!")
